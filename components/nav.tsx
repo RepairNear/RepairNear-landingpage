@@ -34,7 +34,7 @@ export default function Nav() {
 
         <a
           href="#"
-          className="inline-flex px-5 py-2 text-sm font-semibold rounded-[9px] bg-accent text-white transition-colors hover:bg-accent-deep"
+          className="inline-flex px-5 py-2 text-sm font-semibold rounded-[11px] bg-accent text-white transition-colors hover:bg-accent-deep"
         >
           Get the app
         </a>
