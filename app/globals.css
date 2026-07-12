@@ -1,26 +1,69 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* Colors — matching existing RepairNear site */
+  --color-bg: #F6F4EF;
+  --color-bg-alt: #FBFAF6;
+  --color-ink: #0B0B0A;
+  --color-ink-soft: #6B6A66;
+  --color-ink-muted: #A8A69C;
+  --color-line: #E4E0D6;
+  --color-stripe: #E9E5DC;
+
+  --color-accent: #F2782E;
+  --color-accent-deep: #B8541A;
+  --color-accent-tint: #FCE8D8;
+
+  --color-teal: #146357;
+  --color-teal-tint: #E3EEEA;
+
+  /* Fonts — next/font exposes the self-hosted families via these variables */
+  --font-sans: var(--font-manrope), system-ui, -apple-system, sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, monospace;
+
+  /* Radii */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+html {
+  scroll-behavior: smooth;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html, body {
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Vertical stripe backdrop (used by hero) */
+.stripes-bg {
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent 0,
+    transparent 39px,
+    var(--color-stripe) 39px,
+    var(--color-stripe) 40px
+  );
+}
+
+/* Container helper */
+.container-page {
+  max-width: 1240px;
+  margin-inline: auto;
+  padding-inline: 24px;
+}
+
+@media (min-width: 768px) {
+  .container-page {
+    padding-inline: 48px;
+  }
 }
