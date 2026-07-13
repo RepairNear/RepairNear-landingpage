@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* Short-viewport variant — compact pinned sections on small laptop screens */
+@custom-variant short (@media (max-height: 660px));
+
 @theme {
   /* Colors — matching existing RepairNear site */
   --color-bg: #F6F4EF;
