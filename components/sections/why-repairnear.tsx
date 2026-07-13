@@ -124,7 +124,7 @@ export default function WhyRepairNear() {
   const showTraveler = !!geom && !reduceMotion;
 
   return (
-    <section id="why" ref={sectionRef} className="relative py-20 md:py-24 overflow-hidden">
+    <section id="why" ref={sectionRef} className="relative py-17 md:py-15 overflow-hidden">
       {/* Backdrop — the hero's stripe motif carried through, plus soft brand glows */}
       <div className="absolute inset-0 stripes-bg opacity-40 pointer-events-none" aria-hidden />
       <div

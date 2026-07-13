@@ -17,9 +17,7 @@ export default function Hero() {
         <h1 className="mx-auto max-w-[1000px] text-[40px] sm:text-[54px] md:text-[69px] font-bold tracking-[-0.035em] leading-[1.02]">
           Find Trusted
           <LogoMark size={60} className="align-middle mx-1.5 rounded-[18px] -rotate-[-17deg]" />
-          Repair technicians
-          <br />
-          near you.
+          Repair technicians near you.
         </h1>
 
         <p className="mx-auto mt-6 max-w-[520px] text-[17px] text-[color:var(--color-ink-soft)] leading-relaxed">
@@ -65,30 +63,29 @@ export default function Hero() {
           </a>
         </div>
 
-        <p className="mt-5 text-[13px] font-medium text-[color:var(--color-ink-soft)]">
-          <span className="font-bold text-[color:var(--color-accent-deep)]">
-            4.9&#9733;
-          </span>{" "}
-          average rating &middot; 500+ verified technicians across Ghana
-        </p>
+        
 
-        <div className="mt-10 md:mt-12 relative">
-          <div className="mx-auto max-w-4xl aspect-[16/9] rounded-3xl border-2 border-dashed border-[color:var(--color-line)] bg-white/40 flex items-center justify-center text-[color:var(--color-ink-muted)] text-sm text-center px-6">
+        <div className="mt-10 md:mt-6 relative">
+          {/* <div className="mx-auto max-w-4xl aspect-[16/9] rounded-3xl border-2 border-dashed border-[color:var(--color-line)] bg-white/40 flex items-center justify-center text-[color:var(--color-ink-muted)] text-sm text-center px-6">
             Your three-phone composition drops in here &rarr;{" "}
             public/hero-phones.png (transparent PNG, 2x or 3x)
-          </div>
+          </div> */}
           {/* When public/hero-phones.png exists, replace the placeholder div above with this: */}
-          {/*
           <Image
-            src="/hero-phones.png"
+            src="/hero2.png"
             alt="RepairNear app on three phones"
             width={1200}
             height={900}
             priority
             className="mx-auto max-w-4xl w-full h-auto"
           />
-          */}
         </div>
+        <p className="mt-5 text-[13px] font-medium text-[color:var(--color-ink-soft)]">
+          <span className="font-bold text-[color:var(--color-accent-deep)]">
+            4.9&#9733;
+          </span>{" "}
+          average rating &middot; 500+ verified technicians across Ghana
+        </p>
       </div>
     </section>
   );
