@@ -186,7 +186,7 @@ export default function WhyRepairNear() {
 
       <div className="container-page relative">
         <div className="mx-auto mb-12 max-w-2xl text-center md:mb-16">
-          <p className="mb-3 text-[13px] font-bold uppercase tracking-[0.15em] text-accent-deep">
+          <p className="mb-3 text-[13px] font-bold uppercase tracking-[0.15em] text-accent-deep"> 
             WHY REPAIRNEAR
           </p>
           <h2 className="text-3xl font-extrabold leading-tight tracking-tight md:text-5xl">
