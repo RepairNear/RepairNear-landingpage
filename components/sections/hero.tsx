@@ -16,7 +16,7 @@ export default function Hero() {
       <div className="container-page relative z-10 text-center">
         <h1 className="mx-auto max-w-[1000px] text-[40px] sm:text-[54px] md:text-[69px] font-bold tracking-[-0.035em] leading-[1.02]">
           Find Trusted
-          <LogoMark size={60} className="align-middle mx-1.5 rounded-[18px] -rotate-[-17deg]" />
+          <LogoMark size={58} className="align-middle mx-1.5 rounded-[18px] -rotate-[-18deg]" />
           Repair technicians near you.
         </h1>
 
