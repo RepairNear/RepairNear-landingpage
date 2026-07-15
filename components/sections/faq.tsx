@@ -183,7 +183,7 @@ export default function Faq() {
           viewport={{ once: true, amount: 0.4 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <p className="mb-4 text-[13px] font-bold uppercase tracking-[0.15em] text-teal">
+          <p className="mb-4 text-[13px] font-bold uppercase tracking-[0.15em] text-accent-deep">
             Got questions?
           </p>
           <h2 className="text-4xl font-extrabold leading-[1.05] tracking-tight md:text-5xl">
