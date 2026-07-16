@@ -18,7 +18,7 @@ const cards = [
       "Verified shops & technicians",
       "Optional protection plans",
       "Real-time order tracking",
-      "In-app technician chat",
+
     ],
   },
   {
