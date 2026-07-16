@@ -5,9 +5,10 @@ import Nav from "@/components/nav";
 import Footer from "@/components/footer";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | RepairNear",
+  title: "Privacy Policy",
   description:
     "The RepairNear Privacy Policy is coming soon. RepairNear is owned and operated by Davis Dag Electronics.",
+  alternates: { canonical: "/privacy" },
   robots: { index: false, follow: true },
 };
 

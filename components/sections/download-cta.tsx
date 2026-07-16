@@ -76,7 +76,7 @@ export default function DownloadCta() {
                 className="mt-9 flex flex-col items-center gap-4 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-5 md:justify-start"
               >
                 <motion.a
-                  href="#"
+                  href="https://apps.apple.com/app/id6788511622"
                   whileHover={reduce ? undefined : { y: -3 }}
                   whileTap={reduce ? undefined : { scale: 0.97 }}
                   transition={{ type: "spring", stiffness: 350, damping: 22 }}

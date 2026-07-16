@@ -50,7 +50,7 @@ export const sections: Section[] = [
           },
           {
             term: "User, you, or your",
-            definition: "means any individual or entity that accesses or uses the Platform, including customers and technicians.",
+            definition: "means any individual or entity that accesses or uses the Platform, including Customers and Technicians.",
           },
           {
             term: "Technician or Repair Shop",
@@ -91,9 +91,9 @@ export const sections: Section[] = [
     content: [
       { type: "paragraph", text: "RepairNear is a technology platform owned and operated by Davis Dag Electronics and registered under the laws of the Republic of Ghana." },
       { type: "paragraph", text: "RepairNear provides a digital marketplace that assists Users in locating and connecting with mobile phone, tablet, computer, and laptop repair technicians and repair shops throughout Ghana." },
-      { type: "paragraph", text: "RepairNear does not perform repairs, employ repair technicians, own repair shops, sell spare parts, set or publish repair prices, or act as a repair contractor unless explicitly stated otherwise in writing." },
+      { type: "paragraph", text: "RepairNear does not perform repairs, employ repair technicians, own repair shops, sell spare parts, set or publish repair prices, or act as a repair contractor, unless explicitly stated otherwise in writing." },
       { type: "paragraph", text: "RepairNear's role is limited to providing information, shop listings, technician profiles, ratings, and communication tools that assist Users in finding repair services. RepairNear does not display, quote, verify, or guarantee the price of any repair; all pricing is a matter solely between the Customer and the Technician, as set out in Section 9. RepairNear does not guarantee that any Technician listed is currently active, available, or in good standing at the time of a User's inquiry." },
-      { type: "paragraph", text: "RepairNear generates revenue through two features described later in these Terms: (a) an optional Protection Plan available to Customers (Section 10), and (b) a monthly Subscription Fee payable by Technicians to maintain an active listing (Section 11)." },
+      { type: "paragraph", text: "RepairNear generates revenue through two features described later in these Terms: (a) an optional Protection Plan available to Customers (Section 10); and (b) a monthly Subscription Fee payable by Technicians to maintain an active listing (Section 11)." },
     ],
   },
   {
@@ -361,7 +361,7 @@ export const sections: Section[] = [
     title: "Device Collection Policy",
     content: [
       { type: "paragraph", text: "Customers must collect repaired devices within seven (7) days after receiving notice that repairs have been completed." },
-      { type: "paragraph", text: "Failure to collect a repaired device within seven (7) days after you have been notified that it is ready for collection may result in a storage and handling fee of GHS 20.00 per day until the device is collected." },
+      { type: "paragraph", text: "Failure to collect a repaired device within seven (7) days after the Customer has been notified that it is ready for collection may result in a storage and handling fee of GHS 20.00 per day until the device is collected." },
       { type: "paragraph", text: "Additional charges may be imposed by the repair Technician or repair shop according to their individual policies. Devices left uncollected for an extended period, as defined by the individual Technician's policy, may be subject to disposal in accordance with applicable law, after reasonable notice to the Customer." },
     ],
   },
@@ -537,6 +537,7 @@ export const sections: Section[] = [
       { type: "paragraph", text: "Any liability arising from repair services remains solely between the Customer and the repair provider." },
       { type: "paragraph", text: "The provision of mediation assistance under the Protection Plan (Section 10) is a facilitation service only. It shall not be construed as an assumption of liability by RepairNear for the underlying dispute, as an admission of fault, or as a waiver or reduction of any limitation of liability set out in these Terms, and does not obligate RepairNear to pay any compensation, refund, or damages to any party." },
       { type: "paragraph", text: "Where liability cannot be excluded under applicable Ghanaian law, RepairNear's total aggregate liability to any User for all claims arising out of or relating to the Platform shall not exceed the greater of (a) the total fees paid by that User to RepairNear (whether as Protection Plan fees or Subscription Fees) in the twelve (12) months preceding the claim, or (b) GHS 500.00." },
+      { type: "paragraph", text: "Nothing in these Terms shall exclude or limit RepairNear's liability for death or personal injury caused by its own negligence, for fraud or fraudulent misrepresentation, or for any other liability which cannot lawfully be excluded or limited under the laws of Ghana." },
     ],
   },
   {
@@ -573,7 +574,7 @@ export const sections: Section[] = [
     content: [
       { type: "paragraph", text: "RepairNear reserves the right to suspend or terminate any account, with or without notice, where fraud, abuse, illegal conduct, false information, or misuse of the Platform is suspected or where a User breaches these Terms." },
       { type: "paragraph", text: "Users may close their account at any time by following the account closure process within the application or by contacting RepairNear directly." },
-      { type: "paragraph", text: "Provisions of these Terms which by their nature should survive termination, including but not limited to Sections on Limitation of Liability, Indemnification, Data Protection, Dispute Resolution, and Governing Law, shall survive any termination of these Terms." },
+      { type: "paragraph", text: "Provisions of these Terms which by their nature should survive termination, including but not limited to the Sections on Limitation of Liability, Indemnification, Data Protection, Dispute Resolution, and Governing Law, shall survive any termination of these Terms." },
     ],
   },
   {
@@ -676,8 +677,8 @@ export const sections: Section[] = [
     number: 39,
     title: "Contact Information",
     content: [
-      { type: "paragraph", text: "RepairNear: Owned and Operated by Davis Dag Electronics" },
-      { type: "paragraph", text: "For inquiries regarding these Terms, users may contact RepairNear through the official communication channels provided within the application." },
+      { type: "paragraph", text: "RepairNear: Owned and Operated by Davis Dag Electronics." },
+      { type: "paragraph", text: "For inquiries regarding these Terms, Users may also contact RepairNear through the official communication channels provided within the application." },
       {
         type: "emphasis",
         text: "BY USING REPAIRNEAR, YOU ACKNOWLEDGE THAT REPAIRNEAR IS ONLY A PLATFORM THAT CONNECTS CUSTOMERS WITH INDEPENDENT REPAIR TECHNICIANS AND REPAIR SHOPS, AND THAT REPAIRNEAR IS NOT RESPONSIBLE FOR THE ACTS, OMISSIONS, SERVICES, OR CONDUCT OF THOSE INDEPENDENT PARTIES.",

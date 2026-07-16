@@ -6,9 +6,10 @@ import { TocList, MobileToc } from "@/components/terms/toc";
 import { SectionRenderer } from "@/components/terms/section-renderer";
 
 export const metadata: Metadata = {
-  title: "Terms of Service | RepairNear",
+  title: "Terms of Service",
   description:
     "The terms of service governing use of RepairNear, owned and operated by Davis Dag Electronics.",
+  alternates: { canonical: "/terms" },
   robots: { index: true, follow: true },
 };
 

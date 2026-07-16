@@ -27,7 +27,7 @@ export default function Hero() {
 
         <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-5">
           <a
-            href="#"
+            href="https://apps.apple.com/app/id6788511622"
             className="inline-flex w-full max-w-60 justify-center items-center gap-2.5 bg-[color:var(--color-ink)] text-white px-6 py-3.5 rounded-[11px] text-[14px] font-semibold sm:w-auto sm:max-w-none"
           >
             Get from Apple
