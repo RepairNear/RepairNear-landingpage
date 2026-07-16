@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
 import {
   motion,
@@ -10,16 +11,7 @@ import {
   useReducedMotion,
   type MotionValue,
 } from "motion/react";
-import {
-  ShieldCheck,
-  Ticket,
-  LocateFixed,
-  MapPin,
-  Search,
-  Star,
-  Check,
-  Clock,
-} from "lucide-react";
+import { ShieldCheck, Ticket, LocateFixed } from "lucide-react";
 
 const points = [
   {
@@ -34,7 +26,7 @@ const points = [
     kicker: "Booking",
     pain: "Calling shops one by one",
     title: "Booking a repair",
-    body: "Compare nearby repair shops, lock in a clear quote, and book in just a few taps.",
+    body: "Compare nearby repair shops and book a repair in just a few taps.",
   },
   {
     icon: LocateFixed,
@@ -350,7 +342,21 @@ function PointRow({
   );
 }
 
-const screens = [ShopsScreen, QuoteScreen, TrackingScreen];
+// Real app screenshots — one per point, in the same order as `points`.
+const screens = [
+  {
+    src: "/photos/vettedtechnicains.jpeg",
+    alt: "RepairNear app showing top-rated repair shops near you",
+  },
+  {
+    src: "/photos/booking.jpeg",
+    alt: "RepairNear app confirming a submitted repair booking",
+  },
+  {
+    src: "/photos/tracking.jpeg",
+    alt: "RepairNear app tracking repair progress step by step",
+  },
+];
 
 function PhoneMockup({ active }: { active: number }) {
   return (
@@ -359,21 +365,14 @@ function PhoneMockup({ active }: { active: number }) {
       <div className="absolute inset-0 rounded-[48px] bg-gradient-to-br from-[#55555a] via-[#232326] to-[#3c3c41] p-[3px] shadow-[0_40px_80px_-24px_rgba(11,11,10,0.5)]">
         <div className="relative h-full w-full rounded-[45px] bg-[#0b0b0c] p-[9px]">
           <div className="relative h-full w-full overflow-hidden rounded-[37px] bg-bg-alt">
-            <div className="absolute inset-x-0 top-0 z-20 flex items-center justify-between px-5 pt-2.5 text-[9px] font-semibold text-ink">
-              <span>9:41</span>
-              <span className="flex items-center gap-1">
-                <span className="h-1.5 w-3 rounded-[2px] bg-ink/70" />
-                <span className="h-1.5 w-4 rounded-[2px] border border-ink/50" />
-              </span>
-            </div>
             <div className="absolute left-1/2 top-2 z-20 flex h-[18px] w-[62px] -translate-x-1/2 items-center justify-end rounded-full bg-[#0b0b0c] pr-1.5">
               <span className="h-2 w-2 rounded-full bg-[#1c2b45] ring-1 ring-white/10" />
             </div>
 
-            {screens.map((Screen, i) => (
+            {screens.map((screen, i) => (
               <motion.div
-                key={i}
-                className="absolute inset-0 pt-10"
+                key={screen.src}
+                className="absolute inset-0"
                 initial={false}
                 animate={{
                   opacity: active === i ? 1 : 0,
@@ -381,7 +380,13 @@ function PhoneMockup({ active }: { active: number }) {
                 }}
                 transition={{ duration: 0.35, ease: "easeOut" }}
               >
-                <Screen />
+                <Image
+                  src={screen.src}
+                  alt={screen.alt}
+                  fill
+                  sizes="256px"
+                  className="object-cover object-top"
+                />
               </motion.div>
             ))}
 
@@ -409,187 +414,6 @@ function PhoneMockup({ active }: { active: number }) {
           className="absolute -left-[2.5px] top-[184px] h-[42px] w-[3px] rounded-l-sm bg-[#39393e]"
           aria-hidden
         />
-      </div>
-    </div>
-  );
-}
-
-const shops = [
-  {
-    initials: "FP",
-    name: "FixPoint Osu",
-    rating: "4.9",
-    reviews: 128,
-    distance: "1.2 km",
-  },
-  {
-    initials: "TB",
-    name: "TechBridge Labadi",
-    rating: "4.8",
-    reviews: 96,
-    distance: "2.4 km",
-  },
-  {
-    initials: "AD",
-    name: "Accra Device Lab",
-    rating: "4.9",
-    reviews: 210,
-    distance: "3.1 km",
-  },
-];
-
-function ShopsScreen() {
-  return (
-    <div className="flex h-full flex-col gap-2.5 px-4">
-      <div>
-        <p className="text-[10px] text-ink-soft">Find repair shops</p>
-        <p className="flex items-center gap-1 text-[13px] font-bold">
-          <MapPin size={12} className="text-accent-deep" />
-          Osu, Accra
-        </p>
-      </div>
-
-      <div className="flex items-center gap-2 rounded-full border border-line bg-white px-3 py-2 text-[10px] text-ink-muted">
-        <Search size={11} />
-        iPhone screen repair
-      </div>
-
-      <div className="flex flex-col gap-2">
-        {shops.map((shop) => (
-          <div
-            key={shop.name}
-            className="flex items-center gap-2.5 rounded-xl border border-line bg-white p-2.5"
-          >
-            <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-teal-tint text-[10px] font-bold text-teal">
-              {shop.initials}
-            </div>
-            <div className="min-w-0">
-              <p className="flex items-center gap-1 text-[11px] font-bold">
-                <span className="truncate">{shop.name}</span>
-                <ShieldCheck size={10} className="shrink-0 text-teal" />
-              </p>
-              <p className="flex items-center gap-1 text-[9px] text-ink-soft">
-                <Star size={9} className="fill-accent text-accent" />
-                {shop.rating} ({shop.reviews}) · {shop.distance}
-              </p>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-const quoteLines = [
-  { label: "Genuine display part", value: "GH₵ 850" },
-  { label: "Labor & fitting", value: "GH₵ 120" },
-  { label: "90-day warranty", value: "Included" },
-];
-
-function QuoteScreen() {
-  return (
-    <div className="flex h-full flex-col gap-2.5 px-4">
-      <div>
-        <p className="text-[10px] text-ink-soft">Repair quote</p>
-        <p className="text-[13px] font-bold">iPhone 12 · Screen replacement</p>
-      </div>
-
-      <div className="rounded-xl border border-line bg-white p-3">
-        {quoteLines.map((line) => (
-          <div
-            key={line.label}
-            className="flex items-center justify-between py-1.5 text-[10px]"
-          >
-            <span className="text-ink-soft">{line.label}</span>
-            <span
-              className={
-                line.value === "Included"
-                  ? "font-semibold text-teal"
-                  : "font-semibold"
-              }
-            >
-              {line.value}
-            </span>
-          </div>
-        ))}
-        <div className="mt-1 flex items-center justify-between border-t border-line pt-2 text-[11px] font-bold">
-          <span>Total</span>
-          <span>GH₵ 970</span>
-        </div>
-      </div>
-
-      <button className="rounded-lg bg-accent py-2 text-[11px] font-semibold text-white">
-        Book this repair
-      </button>
-
-      <p className="flex items-center justify-center gap-1 text-[9px] text-ink-soft">
-        <Check size={10} className="text-teal" />
-        Price locked before you book
-      </p>
-    </div>
-  );
-}
-
-const trackingSteps = [
-  { label: "Dropped off", time: "9:14 AM", state: "done" },
-  { label: "Diagnosis complete", time: "10:02 AM", state: "done" },
-  { label: "Repair in progress", time: "Now", state: "active" },
-  { label: "Quality check", time: "", state: "upcoming" },
-  { label: "Ready for pickup", time: "", state: "upcoming" },
-];
-
-function TrackingScreen() {
-  return (
-    <div className="flex h-full flex-col gap-2.5 px-4">
-      <div>
-        <p className="text-[10px] text-ink-soft">Order #RN-2841</p>
-        <p className="text-[13px] font-bold">iPhone 12 · FixPoint Osu</p>
-      </div>
-
-      <div className="rounded-xl border border-line bg-white p-3">
-        {trackingSteps.map((step, i) => (
-          <div key={step.label} className="flex gap-2.5">
-            <div className="flex flex-col items-center">
-              {step.state === "done" ? (
-                <span className="flex h-4 w-4 items-center justify-center rounded-full bg-teal">
-                  <Check size={9} className="text-white" />
-                </span>
-              ) : step.state === "active" ? (
-                <span className="flex h-4 w-4 items-center justify-center rounded-full bg-accent-tint">
-                  <span className="h-2 w-2 animate-pulse rounded-full bg-accent" />
-                </span>
-              ) : (
-                <span className="h-4 w-4 rounded-full border border-line bg-white" />
-              )}
-              {i < trackingSteps.length - 1 && (
-                <span
-                  className={`w-px flex-1 ${
-                    step.state === "done" ? "bg-teal" : "bg-line"
-                  }`}
-                />
-              )}
-            </div>
-            <div className="flex flex-1 items-baseline justify-between pb-2.5">
-              <span
-                className={`text-[10px] ${
-                  step.state === "upcoming"
-                    ? "text-ink-muted"
-                    : step.state === "active"
-                      ? "font-bold text-accent-deep"
-                      : "font-semibold"
-                }`}
-              >
-                {step.label}
-              </span>
-              <span className="text-[9px] text-ink-muted">{step.time}</span>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      <div className="flex items-center justify-center gap-1.5 rounded-lg bg-teal-tint py-2 text-[10px] font-semibold text-teal">
-        <Clock size={11} />
-        Ready by 2:30 PM today
       </div>
     </div>
   );

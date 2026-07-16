@@ -20,7 +20,7 @@ const plexMono = IBM_Plex_Mono({
 export const metadata: Metadata = {
   title: "RepairNear — Trusted device repair, near you",
   description:
-    "Compare verified repair shops across Ghana, see the price upfront, and follow your device from drop-off to pickup.",
+    "Compare verified repair shops across Ghana, book a repair, and follow your device from drop-off to pickup.",
   keywords: [
     "device repair Ghana",
     "phone repair Ghana",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "RepairNear — Trusted device repair, near you",
     description:
-      "Compare verified repair shops across Ghana, see the price upfront, and follow your device from drop-off to pickup.",
+      "Compare verified repair shops across Ghana, book a repair, and follow your device from drop-off to pickup.",
     type: "website",
     locale: "en_GH",
   },

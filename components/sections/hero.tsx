@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { LogoMark } from "@/components/ui/logo";
 
 export default function Hero() {
   return (
@@ -15,20 +14,21 @@ export default function Hero() {
 
       <div className="container-page relative z-10 text-center">
         <h1 className="mx-auto max-w-[1000px] text-[40px] sm:text-[54px] md:text-[69px] font-bold tracking-[-0.035em] leading-[1.02]">
-          Find Trusted
-          <LogoMark size={58} className="align-middle mx-1.5 rounded-[18px] -rotate-[-18deg]" />
-          Repair technicians near you.
+          Find trusted repair <br /> technicians{" "}
+          <span className="font-extrabold text-accent [-webkit-text-stroke:1.5px_currentColor]">
+            Near You.
+          </span>
         </h1>
 
         <p className="mx-auto mt-6 max-w-[520px] text-[17px] text-[color:var(--color-ink-soft)] leading-relaxed">
-          Compare verified repair shops across Ghana, see the price upfront,
-          and follow your device from drop-off to pickup.
+          Compare verified repair shops across Ghana, book a repair, and
+          track your device from drop-off to pickup.
         </p>
 
-        <div className="mt-8 flex justify-center items-center gap-5 flex-wrap">
+        <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-5">
           <a
             href="#"
-            className="inline-flex items-center gap-2.5 bg-[color:var(--color-ink)] text-white px-6 py-3.5 rounded-[11px] text-[14px] font-semibold"
+            className="inline-flex w-full max-w-60 justify-center items-center gap-2.5 bg-[color:var(--color-ink)] text-white px-6 py-3.5 rounded-[11px] text-[14px] font-semibold sm:w-auto sm:max-w-none"
           >
             Get from Apple
             <svg
@@ -48,7 +48,7 @@ export default function Hero() {
 
           <a
             href="https://play.google.com/store/apps/details?id=com.DAGElectronics.repairnear"
-            className="inline-flex items-center gap-2.5 bg-[color:var(--color-accent)] text-white hover:bg-accent-deep px-6 py-3.5 rounded-[11px] text-[14px] font-semibold"
+            className="inline-flex w-full max-w-60 justify-center items-center gap-2.5 bg-[color:var(--color-accent)] text-white hover:bg-accent-deep px-6 py-3.5 rounded-[11px] text-[14px] font-semibold sm:w-auto sm:max-w-none"
           >
             Play Store
             <svg

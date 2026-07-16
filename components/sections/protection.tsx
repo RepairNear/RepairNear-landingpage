@@ -6,7 +6,7 @@ import { Star, ArrowRight, Check } from "lucide-react";
 const coverage = [
   "Dispute resolution",
   "Mediator support",
-  "48-hour technician response",
+  "72-hour technician response",
 ];
 
 export default function Protection() {
@@ -92,7 +92,7 @@ export default function Protection() {
 
           <div className="relative grid items-center gap-10 md:grid-cols-[1.15fr_0.85fr] md:gap-12">
             {/* Left — the pitch */}
-            <div>
+            <div className="text-center md:text-left">
               <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3.5 py-1.5 text-[13px] font-semibold text-white ring-1 ring-white/15 backdrop-blur">
                 <span className="flex items-center gap-0.5" aria-hidden>
                   <Star size={11} className="fill-accent text-accent" />
@@ -106,7 +106,7 @@ export default function Protection() {
                 Add Protection — we step in if something goes wrong.
               </h2>
 
-              <p className="mt-4 max-w-md text-[15px] leading-relaxed text-white/70 md:text-[17px]">
+              <p className="mx-auto mt-4 max-w-md text-[15px] leading-relaxed text-white/70 md:mx-0 md:text-[17px]">
                 Optional peace of mind for any booking. Mediation, response
                 guarantees, and dispute support — built in.
               </p>

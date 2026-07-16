@@ -18,17 +18,17 @@ const faqs: Faq[] = [
   {
     question: "How do I book a repair?",
     answer:
-      "Open the RepairNear app, tell us your device and what's wrong, then compare verified technicians near you by price, distance, and rating. Pick a time, confirm, and you'll get a fixed quote and live status — before any work begins.",
+      "Open the RepairNear app, tell us your device and what's wrong, then compare verified technicians near you by distance and rating. Pick a time, confirm your booking, and follow your repair with live status — from drop-off to pickup.",
   },
   {
     question: "What is RepairNear Protection?",
     answer:
-      "Protection is an optional add-on for any booking. It covers dispute resolution, mediator support, and a 48-hour technician response guarantee — so you're never left stranded if a repair doesn't go to plan.",
+      "Protection is an optional add-on for any booking. It covers dispute resolution, mediator support, and a 72-hour technician response guarantee — so you're never left stranded if a repair doesn't go to plan.",
   },
   {
     question: "How do I find a trusted technician?",
     answer:
-      "Every shop on RepairNear is vetted and rated by real customers. Filter by device, distance, price, and rating, then check verified badges and honest reviews so you know exactly who you're booking before you commit.",
+      "Every shop on RepairNear is vetted and rated by real customers. Filter by device, distance, and rating, then check verified badges and honest reviews so you know exactly who you're booking before you commit.",
   },
   {
     question: "Can I cancel a booking?",

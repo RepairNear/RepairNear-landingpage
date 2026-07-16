@@ -7,7 +7,7 @@ import { Users, Wrench, ShieldCheck, Blend } from "lucide-react";
 const values = [
   { icon: Users, label: "Customers first" },
   { icon: Wrench, label: "Skilled shops" },
-  { icon: Blend, label: "Real transparency" },
+  { icon: Blend, label: "Direct connections" },
 ];
 
 export default function About() {
@@ -28,6 +28,7 @@ export default function About() {
         <div className="grid gap-12 md:grid-cols-2 md:gap-16">
           {/* Left — the story */}
           <motion.div
+            className="text-center md:text-left"
             variants={container}
             initial={reduce ? false : "hidden"}
             whileInView="show"
@@ -50,22 +51,21 @@ export default function About() {
 
             <motion.p
               variants={item}
-              className="mt-6 max-w-xl text-[16px] leading-relaxed text-ink-soft md:text-[17px]"
+              className="mx-auto mt-6 max-w-xl text-[16px] leading-relaxed text-ink-soft md:mx-0 md:text-[17px]"
             >
               RepairNear started with a simple frustration: getting a phone or
               laptop fixed shouldn&rsquo;t feel like a gamble. Our mission is to
-              make device repair transparent, trustworthy, and stress-free for
-              every Ghanaian.
+              connect every Ghanaian with trusted technicians and make device
+              repair stress-free.
             </motion.p>
 
             <motion.p
               variants={item}
-              className="mt-4 max-w-xl text-[16px] leading-relaxed text-ink-soft md:text-[17px]"
+              className="mx-auto mt-4 max-w-xl text-[16px] leading-relaxed text-ink-soft md:mx-0 md:text-[17px]"
             >
-              We connect customers with vetted technicians, show what each
-              repair includes upfront, and back every booking with optional
-              Protection. For technicians, we provide tools to grow their shop,
-              manage jobs, and reach more customers.
+              We connect customers with vetted technicians and back every
+              booking with optional Protection. For technicians, we provide
+              tools to grow their shop, manage jobs, and reach more customers.
             </motion.p>
 
             {/* Value chips */}

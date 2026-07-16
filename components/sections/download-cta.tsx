@@ -73,14 +73,14 @@ export default function DownloadCta() {
               {/* Same CTA pair as the hero */}
               <motion.div
                 variants={item}
-                className="mt-9 flex flex-wrap items-center justify-center gap-5 md:justify-start"
+                className="mt-9 flex flex-col items-center gap-4 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-5 md:justify-start"
               >
                 <motion.a
                   href="#"
                   whileHover={reduce ? undefined : { y: -3 }}
                   whileTap={reduce ? undefined : { scale: 0.97 }}
                   transition={{ type: "spring", stiffness: 350, damping: 22 }}
-                  className="inline-flex items-center gap-2.5 rounded-[11px] bg-ink px-6 py-3.5 text-[14px] font-semibold text-white transition-shadow hover:shadow-[0_16px_36px_-14px_rgba(0,0,0,0.6)]"
+                  className="inline-flex w-full max-w-60 justify-center items-center gap-2.5 rounded-[11px] bg-ink px-6 py-3.5 text-[14px] font-semibold text-white transition-shadow hover:shadow-[0_16px_36px_-14px_rgba(0,0,0,0.6)] sm:w-auto sm:max-w-none"
                 >
                   Get from Apple
                   <svg
@@ -103,7 +103,7 @@ export default function DownloadCta() {
                   whileHover={reduce ? undefined : { y: -3 }}
                   whileTap={reduce ? undefined : { scale: 0.97 }}
                   transition={{ type: "spring", stiffness: 350, damping: 22 }}
-                  className="inline-flex items-center gap-2.5 rounded-[11px] bg-white px-6 py-3.5 text-[14px] font-semibold text-accent-deep transition-colors hover:bg-accent-tint hover:shadow-[0_16px_36px_-14px_rgba(0,0,0,0.35)]"
+                  className="inline-flex w-full max-w-60 justify-center items-center gap-2.5 rounded-[11px] bg-white px-6 py-3.5 text-[14px] font-semibold text-accent-deep transition-colors hover:bg-accent-tint hover:shadow-[0_16px_36px_-14px_rgba(0,0,0,0.35)] sm:w-auto sm:max-w-none"
                 >
                   Play Store
                   <svg

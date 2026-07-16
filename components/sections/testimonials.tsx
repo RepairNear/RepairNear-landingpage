@@ -26,7 +26,7 @@ const testimonials: Testimonial[] = [
   {
     stars: 5,
     quote:
-      "Found a verified shop two streets away. The quote matched what I paid. Finally, transparency.",
+      "Found a verified shop two streets away and booked in minutes. No more asking around for someone I could trust.",
     name: "Daniel Owusu",
     location: "Accra, Ghana",
     bg: "bg-teal-tint",

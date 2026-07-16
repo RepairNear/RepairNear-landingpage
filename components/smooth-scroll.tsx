@@ -11,6 +11,22 @@ export default function SmoothScroll() {
 
   // Initialize Lenis once on mount + install click interceptor
   useEffect(() => {
+    // On a page refresh, keep the user right where they were: the browser's
+    // native scroll restoration puts them back at the section they were
+    // viewing. We only drop a stale section hash left behind by nav clicks,
+    // so the hash-scroll effect below doesn't yank the page away from that
+    // spot. Fresh navigations keep their hash so deep links (e.g. /#faq)
+    // still work.
+    const navEntry = performance.getEntriesByType("navigation")[0] as
+      | PerformanceNavigationTiming
+      | undefined;
+    if (navEntry?.type === "reload") {
+      history.scrollRestoration = "auto";
+      if (window.location.hash) {
+        history.replaceState(null, "", window.location.pathname);
+      }
+    }
+
     const lenis = new Lenis({
       duration: 1.1,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),

@@ -112,7 +112,7 @@ export default function HowItWorks() {
         <div className="grid items-start gap-12 lg:grid-cols-2 lg:gap-20">
           {/* Left — heading, sticky on desktop while the timeline scrolls */}
           <motion.div
-            className="lg:sticky lg:top-24"
+            className="text-center lg:sticky lg:top-24 lg:text-left"
             initial={reduceMotion ? false : { opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -124,10 +124,10 @@ export default function HowItWorks() {
             <h2 className="text-4xl font-extrabold leading-[1.1] tracking-tight md:text-5xl">
               From broken to brand-new in 3 steps
             </h2>
-            <p className="mt-5 max-w-md text-[15px] leading-relaxed text-ink-soft md:text-[17px]">
+            <p className="mx-auto mt-5 max-w-md text-[15px] leading-relaxed text-ink-soft md:text-[17px] lg:mx-0">
               RepairNear turns a messy repair errand into one guided flow —
-              browse a trusted shop, book with a clear quote, and track your
-              device all the way to pickup.
+              browse a trusted shop, book a repair, and track your device all
+              the way to pickup.
             </p>
           </motion.div>
 
