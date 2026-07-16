@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Download RepairNear App</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #000;
+            color: #fff;
+        }
+        a { color: #fff; }
+    </style>
+</head>
+<body>
+<div id="fallback" style="display:none; text-align:center;">
+    <p>Get RepairNear:</p>
+    <p><a href="https://apps.apple.com/app/id6788511622">iOS App Store</a></p>
+    <p><a href="https://play.google.com/store/apps/details?id=com.DAGElectronics.repairnear">Google Play</a></p>
+</div>
+<script>
+    const APP_STORE_URL = "https://apps.apple.com/app/id6788511622";
+    const PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.DAGElectronics.repairnear";
+    const ua = navigator.userAgent || navigator.vendor || window.opera;
+
+    if (/iPad|iPhone|iPod/.test(ua) && !window.MSStream) {
+        window.location.replace(APP_STORE_URL);
+    } else if (/android/i.test(ua)) {
+        window.location.replace(PLAY_STORE_URL);
+    } else {
+        document.getElementById('fallback').style.display = 'block';
+    }
+</script>
+</body>
+</html>
