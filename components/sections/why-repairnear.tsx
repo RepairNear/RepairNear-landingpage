@@ -289,20 +289,22 @@ function PointRow({
         style={scrollDriven ? { opacity: copyOpacity, x: copyX } : undefined}
         {...reveal}
       >
-        <p className="mb-3 flex items-center gap-3 font-mono text-[12px] tracking-[0.2em] text-accent-deep">
-          0{index + 1}
-          <span className="h-px w-10 bg-accent" />
-          <span className="uppercase">{point.kicker}</span>
-        </p>
-        <div
-          className={`mb-4 flex h-11 w-11 items-center justify-center rounded-xl transition-colors duration-300 ${
-            active ? "bg-accent-tint" : "border border-line bg-white"
-          }`}
-        >
-          <point.icon
-            size={20}
-            className={active ? "text-accent-deep" : "text-ink-muted"}
-          />
+        <div className="mb-4 flex items-center gap-3">
+          <div
+            className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl transition-colors duration-300 ${
+              active ? "bg-accent-tint" : "border border-line bg-white"
+            }`}
+          >
+            <point.icon
+              size={20}
+              className={active ? "text-accent-deep" : "text-ink-muted"}
+            />
+          </div>
+          <p className="flex items-center gap-3 font-mono text-[12px] font-bold tracking-[0.2em] text-accent-deep">
+            0{index + 1}
+            <span className="h-px w-10 bg-accent" />
+            <span className="uppercase">{point.kicker}</span>
+          </p>
         </div>
         <p className="mb-1.5 text-[14px] text-ink-muted line-through">
           {point.pain}

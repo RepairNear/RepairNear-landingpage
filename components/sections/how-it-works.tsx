@@ -9,20 +9,24 @@ import {
   useMotionValueEvent,
   useReducedMotion,
 } from "motion/react";
+import { Search, Ticket, LocateFixed } from "lucide-react";
 
 const steps = [
   {
     n: "01",
+    icon: Search,
     title: "Browse",
     description: "Choose a shop nearby or search by device or brand.",
   },
   {
     n: "02",
+    icon: Ticket,
     title: "Book",
     description: "Fill a quick QC checklist and pick a protection plan.",
   },
   {
     n: "03",
+    icon: LocateFixed,
     title: "Track",
     description: "Get live updates from drop-off to pickup.",
   },
@@ -79,11 +83,15 @@ export default function HowItWorks() {
   const markerY = useTransform(springY, stops, centers, { clamp: true });
   const fillHeight = useTransform(markerY, (m) => Math.max(0, m - centers[0]));
 
-  useMotionValueEvent(scrollY, "change", (v) => {
+  // A number lights up only once the traveling marker actually reaches it —
+  // track the marker's sprung position, not the raw scroll midpoints.
+  useMotionValueEvent(markerY, "change", (m) => {
     if (!geom) return;
-    const m01 = (geom.stops[0] + geom.stops[1]) / 2;
-    const m12 = (geom.stops[1] + geom.stops[2]) / 2;
-    setActive(v < m01 ? 0 : v < m12 ? 1 : 2);
+    const idx = geom.centers.reduce(
+      (acc, c, i) => (m >= c - 2 ? i : acc),
+      0,
+    );
+    setActive(idx);
   });
 
   const animate = !!geom && !reduceMotion;
@@ -177,13 +185,21 @@ export default function HowItWorks() {
                     {step.n}
                   </div>
 
-                  {/* Card */}
+                  {/* Card — the step's icon sits as a watermark behind the title */}
                   <div className={last ? "flex-1" : "flex-1 pb-10 md:pb-12"}>
-                    <div className="rounded-2xl border border-line bg-bg-alt p-6 transition-shadow duration-300 hover:shadow-[0_24px_60px_-38px_rgba(11,11,10,0.5)] md:p-7">
-                      <h3 className="text-xl font-extrabold tracking-tight md:text-2xl">
+                    <div className="relative overflow-hidden rounded-2xl border border-line bg-bg-alt p-6 transition-shadow duration-300 hover:shadow-[0_24px_60px_-38px_rgba(11,11,10,0.5)] md:p-7">
+                      <step.icon
+                        size={110}
+                        strokeWidth={1.2}
+                        aria-hidden
+                        className={`pointer-events-none absolute -right-4 -top-5 -rotate-12 transition-colors duration-300 ${
+                          on ? "text-accent/15" : "text-ink/5"
+                        }`}
+                      />
+                      <h3 className="relative text-xl font-extrabold tracking-tight md:text-2xl">
                         {step.title}
                       </h3>
-                      <p className="mt-2 text-[15px] leading-relaxed text-ink-soft">
+                      <p className="relative mt-2 text-[15px] leading-relaxed text-ink-soft">
                         {step.description}
                       </p>
                     </div>
