@@ -31,11 +31,6 @@ const faqs: Faq[] = [
       "Every shop on RepairNear is vetted and rated by real customers. Filter by device, distance, and rating, then check verified badges and honest reviews so you know exactly who you're booking before you commit.",
   },
   {
-    question: "Can I cancel a booking?",
-    answer:
-      "Yes. You can cancel free of charge any time before the technician starts work, right from the app. Once a repair is underway, cancellations may be subject to the shop's own policy, which is always shown upfront.",
-  },
-  {
     question: "How do technicians get verified?",
     answer:
       "We review each technician's ID, business details, and repair skills before they go live. Verified shops carry a badge and are continuously scored on completed jobs — so the rating you see reflects real, recent work.",
