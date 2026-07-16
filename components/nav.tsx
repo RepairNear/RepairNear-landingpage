@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Link from "next/link";
 import { LogoMark } from "@/components/ui/logo";
 
 const navLinks = [
@@ -32,12 +31,15 @@ export default function Nav() {
       }`}
     >
       <div className="container-page flex items-center justify-between py-5">
-        <Link href="/" className="flex items-center gap-3">
+        {/* Plain <a> (not next/link) so the smooth-scroll click interceptor
+            can preventDefault and Lenis-scroll to top when already on "/" */}
+        {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
+        <a href="/" className="flex items-center gap-3">
           <LogoMark size={36} />
           <span className="text-lg font-extrabold tracking-tight">
             RepairNear
           </span>
-        </Link>
+        </a>
 
         <div className="hidden lg:flex items-center gap-8">
           {navLinks.map((link) => (

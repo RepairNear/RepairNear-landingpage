@@ -35,6 +35,12 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Compensate for the sticky nav when scrolling to sections via anchor links.
+   Uses :where() so utility classes like scroll-mt-* can override per-section. */
+:where(section[id], article section[id]) {
+  scroll-margin-top: 96px;
+}
+
 html, body {
   background: var(--color-bg);
   color: var(--color-ink);

@@ -2,10 +2,10 @@ import Link from "next/link";
 import { LogoMark } from "@/components/ui/logo";
 
 const productLinks = [
-  { label: "How it works", href: "#how-it-works" },
-  { label: "Protection Plan", href: "#protection" },
-  { label: "Reviews", href: "#reviews" },
-  { label: "FAQ", href: "#faq" },
+  { label: "How it works", href: "/#how-it-works" },
+  { label: "Protection Plan", href: "/#protection" },
+  { label: "Reviews", href: "/#reviews" },
+  { label: "FAQ", href: "/#faq" },
 ];
 
 const legalLinks = [
