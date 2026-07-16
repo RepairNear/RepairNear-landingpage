@@ -3,7 +3,7 @@ import { LogoMark } from "@/components/ui/logo";
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden pt-4 md:pt-8 pb-16">
+    <section className="relative overflow-hidden pt-4 md:pt-8 pb-10">
       <div
         className="absolute inset-0 stripes-bg opacity-55 pointer-events-none"
         aria-hidden
@@ -47,7 +47,7 @@ export default function Hero() {
           </span>
 
           <a
-            href="#"
+            href="https://play.google.com/store/apps/details?id=com.DAGElectronics.repairnear"
             className="inline-flex items-center gap-2.5 bg-[color:var(--color-accent)] text-white hover:bg-accent-deep px-6 py-3.5 rounded-[11px] text-[14px] font-semibold"
           >
             Play Store

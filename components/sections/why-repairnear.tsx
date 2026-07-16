@@ -13,6 +13,7 @@ import {
 import {
   ShieldCheck,
   Receipt,
+  Ticket,
   LocateFixed,
   MapPin,
   Search,
@@ -30,11 +31,11 @@ const points = [
     body: "Every shop on RepairNear is verified and reviewed by real customers before it's listed.",
   },
   {
-    icon: Receipt,
-    kicker: "Pricing",
-    pain: "Unclear what you're paying for",
-    title: "Full repair transparency",
-    body: "See exactly what each repair includes before you book — no surprise charges.",
+    icon: Ticket,
+    kicker: "Booking",
+    pain: "Calling shops one by one",
+    title: "Booking a repair",
+    body: "Compare nearby repair shops, lock in a clear quote, and book in just a few taps.",
   },
   {
     icon: LocateFixed,
@@ -62,7 +63,11 @@ export default function WhyRepairNear() {
   const reduceMotion = useReducedMotion();
 
   const { scrollY } = useScroll();
-  const springY = useSpring(scrollY, { stiffness: 120, damping: 26, mass: 0.6 });
+  const springY = useSpring(scrollY, {
+    stiffness: 120,
+    damping: 26,
+    mass: 0.6,
+  });
 
   // Measure where each dock sits inside the section, and at which window
   // scroll position each dock is vertically centered in the viewport.
@@ -109,8 +114,14 @@ export default function WhyRepairNear() {
   const phoneY = useTransform(springY, stops, geom?.ys ?? [0, 0, 0]);
   const phoneBank = useTransform(
     springY,
-    [stops[0], (stops[0] + stops[1]) / 2, stops[1], (stops[1] + stops[2]) / 2, stops[2]],
-    [0, -4, 0, 4, 0]
+    [
+      stops[0],
+      (stops[0] + stops[1]) / 2,
+      stops[1],
+      (stops[1] + stops[2]) / 2,
+      stops[2],
+    ],
+    [0, -4, 0, 4, 0],
   );
   const pathProgress = useTransform(springY, [stops[0], stops[2]], [0, 1]);
 
@@ -124,9 +135,16 @@ export default function WhyRepairNear() {
   const showTraveler = !!geom && !reduceMotion;
 
   return (
-    <section id="why" ref={sectionRef} className="relative py-17 md:py-15 overflow-hidden">
+    <section
+      id="why"
+      ref={sectionRef}
+      className="relative py-17 md:py-15 overflow-hidden"
+    >
       {/* Backdrop — the hero's stripe motif carried through, plus soft brand glows */}
-      <div className="absolute inset-0 stripes-bg opacity-40 pointer-events-none" aria-hidden />
+      <div
+        className="absolute inset-0 stripes-bg opacity-40 pointer-events-none"
+        aria-hidden
+      />
       <div
         className="absolute top-0 bottom-0 left-[8%] right-[8%] bg-bg pointer-events-none"
         aria-hidden
@@ -186,7 +204,7 @@ export default function WhyRepairNear() {
 
       <div className="container-page relative">
         <div className="mx-auto mb-12 max-w-2xl text-center md:mb-16">
-          <p className="mb-3 text-[13px] font-bold uppercase tracking-[0.15em] text-accent-deep"> 
+          <p className="mb-3 text-[13px] font-bold uppercase tracking-[0.15em] text-accent-deep">
             WHY REPAIRNEAR
           </p>
           <h2 className="text-3xl font-extrabold leading-tight tracking-tight md:text-5xl">
@@ -241,11 +259,15 @@ function PointRow({
   // Copy breathes with the phone: brightens and leans toward it as it docks,
   // recedes as it flies off to the next point.
   const s = stop ?? 0;
-  const copyOpacity = useTransform(springY, [s - 420, s, s + 420], [0.4, 1, 0.4]);
+  const copyOpacity = useTransform(
+    springY,
+    [s - 420, s, s + 420],
+    [0.4, 1, 0.4],
+  );
   const copyX = useTransform(
     springY,
     [s - 420, s, s + 420],
-    [flip ? 26 : -26, 0, flip ? 26 : -26]
+    [flip ? 26 : -26, 0, flip ? 26 : -26],
   );
   const scrollDriven = stop != null && !reduceMotion;
 
@@ -283,7 +305,9 @@ function PointRow({
             className={active ? "text-accent-deep" : "text-ink-muted"}
           />
         </div>
-        <p className="mb-1.5 text-[14px] text-ink-muted line-through">{point.pain}</p>
+        <p className="mb-1.5 text-[14px] text-ink-muted line-through">
+          {point.pain}
+        </p>
         <h3 className="mb-2 text-2xl font-extrabold tracking-tight md:text-[30px] md:leading-tight">
           {point.title}
         </h3>
@@ -296,7 +320,9 @@ function PointRow({
       {!reduceMotion && (
         <div
           className={`hidden md:flex ${
-            flip ? "md:order-1 justify-center md:justify-end md:pr-6" : "justify-center md:justify-start md:pl-6"
+            flip
+              ? "md:order-1 justify-center md:justify-end md:pr-6"
+              : "justify-center md:justify-start md:pl-6"
           }`}
         >
           <div ref={dockRef} className="h-[520px] w-[256px]" />
@@ -348,7 +374,10 @@ function PhoneMockup({ active }: { active: number }) {
                 key={i}
                 className="absolute inset-0 pt-10"
                 initial={false}
-                animate={{ opacity: active === i ? 1 : 0, y: active === i ? 0 : 10 }}
+                animate={{
+                  opacity: active === i ? 1 : 0,
+                  y: active === i ? 0 : 10,
+                }}
                 transition={{ duration: 0.35, ease: "easeOut" }}
               >
                 <Screen />
@@ -363,19 +392,49 @@ function PhoneMockup({ active }: { active: number }) {
           </div>
         </div>
         {/* side buttons */}
-        <span className="absolute -right-[2.5px] top-[128px] h-[62px] w-[3px] rounded-r-sm bg-[#39393e]" aria-hidden />
-        <span className="absolute -left-[2.5px] top-[92px] h-[22px] w-[3px] rounded-l-sm bg-[#39393e]" aria-hidden />
-        <span className="absolute -left-[2.5px] top-[132px] h-[42px] w-[3px] rounded-l-sm bg-[#39393e]" aria-hidden />
-        <span className="absolute -left-[2.5px] top-[184px] h-[42px] w-[3px] rounded-l-sm bg-[#39393e]" aria-hidden />
+        <span
+          className="absolute -right-[2.5px] top-[128px] h-[62px] w-[3px] rounded-r-sm bg-[#39393e]"
+          aria-hidden
+        />
+        <span
+          className="absolute -left-[2.5px] top-[92px] h-[22px] w-[3px] rounded-l-sm bg-[#39393e]"
+          aria-hidden
+        />
+        <span
+          className="absolute -left-[2.5px] top-[132px] h-[42px] w-[3px] rounded-l-sm bg-[#39393e]"
+          aria-hidden
+        />
+        <span
+          className="absolute -left-[2.5px] top-[184px] h-[42px] w-[3px] rounded-l-sm bg-[#39393e]"
+          aria-hidden
+        />
       </div>
     </div>
   );
 }
 
 const shops = [
-  { initials: "FP", name: "FixPoint Osu", rating: "4.9", reviews: 128, distance: "1.2 km" },
-  { initials: "TB", name: "TechBridge Labadi", rating: "4.8", reviews: 96, distance: "2.4 km" },
-  { initials: "AD", name: "Accra Device Lab", rating: "4.9", reviews: 210, distance: "3.1 km" },
+  {
+    initials: "FP",
+    name: "FixPoint Osu",
+    rating: "4.9",
+    reviews: 128,
+    distance: "1.2 km",
+  },
+  {
+    initials: "TB",
+    name: "TechBridge Labadi",
+    rating: "4.8",
+    reviews: 96,
+    distance: "2.4 km",
+  },
+  {
+    initials: "AD",
+    name: "Accra Device Lab",
+    rating: "4.9",
+    reviews: 210,
+    distance: "3.1 km",
+  },
 ];
 
 function ShopsScreen() {
@@ -443,7 +502,9 @@ function QuoteScreen() {
             <span className="text-ink-soft">{line.label}</span>
             <span
               className={
-                line.value === "Included" ? "font-semibold text-teal" : "font-semibold"
+                line.value === "Included"
+                  ? "font-semibold text-teal"
+                  : "font-semibold"
               }
             >
               {line.value}

@@ -57,7 +57,7 @@ export default function Nav() {
           href="#"
           className="inline-flex px-5 py-2 text-sm font-semibold rounded-[11px] bg-accent text-white transition-colors hover:bg-accent-deep"
         >
-          Get the app
+          Download
         </a>
       </div>
     </nav>

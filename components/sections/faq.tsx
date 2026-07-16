@@ -167,7 +167,7 @@ export default function Faq() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="scroll-mt-24 py-24 md:py-32">
+    <section id="faq" className="scroll-mt-24 py-16 md:py-24">
       <div className="container-page relative">
         {/* Soft decorative glow behind the card, echoing the site's depth */}
         <div
@@ -230,7 +230,7 @@ export default function Faq() {
             </span>
           </p>
           <a
-            href="#"
+            href="mailto:dagelectronics58@gmail.com"
             className="group inline-flex shrink-0 items-center gap-2.5 rounded-full bg-accent px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:bg-accent-deep"
           >
             Contact support

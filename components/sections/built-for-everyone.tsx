@@ -59,7 +59,7 @@ const accentStyles = {
 
 export default function BuiltForEveryone() {
   return (
-    <section id="built-for-everyone" className="py-24 md:py-32">
+    <section id="built-for-everyone" className="py-16 md:py-24">
       <div className="container-page">
         {/* Heading area */}
         <motion.div

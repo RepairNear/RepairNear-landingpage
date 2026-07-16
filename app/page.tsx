@@ -8,6 +8,7 @@ import Testimonials from "@/components/sections/testimonials";
 import Protection from "@/components/sections/protection";
 import About from "@/components/sections/about";
 import Faq from "@/components/sections/faq";
+import DownloadCta from "@/components/sections/download-cta";
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
         <Testimonials />
         <About />
         <Faq />
+        <DownloadCta />
       </main>
       <Footer />
     </>

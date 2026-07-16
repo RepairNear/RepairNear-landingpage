@@ -22,7 +22,7 @@ export default function Protection() {
   };
 
   return (
-    <section id="protection" className="scroll-mt-24 py-20 md:py-28">
+    <section id="protection" className="scroll-mt-24 py-14 md:py-20">
       <div className="container-page">
         <motion.div
           className="relative overflow-hidden rounded-[28px] bg-ink px-6 py-12 shadow-[0_50px_110px_-60px_rgba(0,0,0,0.85)] md:rounded-[40px] md:px-14 md:py-16"

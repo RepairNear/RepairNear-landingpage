@@ -23,7 +23,7 @@ export default function About() {
   };
 
   return (
-    <section id="about" className="scroll-mt-24 py-24 md:py-32">
+    <section id="about" className="scroll-mt-24 py-16 md:py-24">
       <div className="container-page">
         <div className="grid gap-12 md:grid-cols-2 md:gap-16">
           {/* Left — the story */}
@@ -55,7 +55,7 @@ export default function About() {
               RepairNear started with a simple frustration: getting a phone or
               laptop fixed shouldn&rsquo;t feel like a gamble. Our mission is to
               make device repair transparent, trustworthy, and stress-free for
-              every Ghanaian — from Accra to Takoradi.
+              every Ghanaian.
             </motion.p>
 
             <motion.p

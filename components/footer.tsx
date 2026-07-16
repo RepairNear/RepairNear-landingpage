@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { LogoMark } from "@/components/ui/logo";
+import { Mail } from "lucide-react";
 
 const productLinks = [
   { label: "How it works", href: "/#how-it-works" },
@@ -15,7 +16,7 @@ const legalLinks = [
 
 export default function Footer() {
   return (
-    <footer className="mt-24 border-t border-line">
+    <footer className="mt-14 border-t border-line">
       <div className="container-page py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           <div className="md:col-span-2">
@@ -29,6 +30,13 @@ export default function Footer() {
               Trusted device repair, right around the corner. Owned and
               operated by Davis Dag Electronics, registered in Ghana.
             </p>
+            <Mail size={16} className="inline-block mr-2.5" />
+            <a
+              href="mailto:dagelectronics58@gmail.com"
+              className="mt-4 inline-block text-sm text-ink-soft transition-colors hover:text-ink"
+            >
+              dagelectronics58@gmail.com
+            </a>
           </div>
 
           <div>
@@ -73,7 +81,6 @@ export default function Footer() {
             © {new Date().getFullYear()} Davis Dag Electronics. All rights
             reserved.
           </p>
-          <p>Made in Ghana.</p>
         </div>
       </div>
     </footer>

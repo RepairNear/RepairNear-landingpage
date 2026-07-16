@@ -148,7 +148,7 @@ export default function Testimonials() {
   };
 
   return (
-    <section id="reviews" className="py-24 md:py-32">
+    <section id="reviews" className="py-16 md:py-24">
       <div className="container-page">
         {/* Heading */}
         <motion.div

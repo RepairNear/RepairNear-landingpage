@@ -92,7 +92,7 @@ export default function HowItWorks() {
   const trackHeight = centers[steps.length - 1] - centers[0];
 
   return (
-    <section id="how-it-works" className="relative py-20 md:py-28">
+    <section id="how-it-works" className="relative py-14 md:py-20">
       {/* Backdrop — the site's stripe motif carried through, softened */}
       <div className="absolute inset-0 stripes-bg opacity-30 pointer-events-none" aria-hidden />
       <div
