@@ -61,7 +61,7 @@ export default function Nav() {
           {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
           <a
             href="/#download"
-            className="inline-flex px-4 py-2 text-sm font-semibold rounded-[11px] bg-accent text-white transition-colors hover:bg-accent-deep sm:px-5"
+            className="hidden px-5 py-2 text-sm font-semibold rounded-[11px] bg-accent text-white transition-colors hover:bg-accent-deep lg:inline-flex"
           >
             Download
           </a>
@@ -100,6 +100,14 @@ export default function Nav() {
                   {link.label}
                 </a>
               ))}
+              {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
+              <a
+                href="/#download"
+                onClick={() => setOpen(false)}
+                className="mt-2 inline-flex justify-center rounded-[11px] bg-accent px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-accent-deep"
+              >
+                Download
+              </a>
             </div>
           </motion.div>
         )}
