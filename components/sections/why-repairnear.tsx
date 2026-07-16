@@ -12,7 +12,6 @@ import {
 } from "motion/react";
 import {
   ShieldCheck,
-  Receipt,
   Ticket,
   LocateFixed,
   MapPin,

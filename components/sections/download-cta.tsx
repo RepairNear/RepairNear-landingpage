@@ -50,7 +50,7 @@ export default function DownloadCta() {
           <div className="relative z-10 grid md:grid-cols-[1.1fr_0.9fr]">
             {/* Left — copy + CTAs */}
             <motion.div
-              className="px-7 pt-12 text-center sm:px-10 md:px-14 md:py-20 md:text-left lg:px-16 lg:py-24"
+              className="px-7 pt-12 text-center sm:px-10 md:px-10 md:py-16 md:text-left lg:px-16 lg:py-24"
               variants={container}
               initial={reduce ? false : "hidden"}
               whileInView="show"
@@ -58,7 +58,7 @@ export default function DownloadCta() {
             >
               <motion.h2
                 variants={item}
-                className="mx-auto max-w-[520px] text-[32px] font-extrabold leading-[1.06] tracking-tight text-white sm:text-[40px] md:mx-0 md:text-[44px] lg:text-[52px]"
+                className="mx-auto max-w-[520px] text-[32px] font-extrabold leading-[1.06] tracking-tight text-white sm:text-[40px] md:mx-0 md:text-[36px] lg:text-[46px] xl:text-[52px]"
               >
                 Your trusted repair, right around you.
               </motion.h2>
@@ -125,7 +125,7 @@ export default function DownloadCta() {
 
           {/* Phone mockup — bleeds out of the panel's bottom edge, tilted like the reference */}
           <motion.div
-            className="pointer-events-none absolute -bottom-14 left-1/2 w-[480px] -translate-x-1/2 rotate-[10deg] sm:w-[540px] md:-bottom-16 md:left-auto md:right-[-300px] md:w-[620px] md:translate-x-0 lg:-bottom-20 lg:right-[-240px] lg:w-[700px]"
+            className="pointer-events-none absolute -bottom-14 left-1/2 w-120 -translate-x-1/2 rotate-10 sm:w-135 md:-bottom-16 md:left-auto md:-right-50 md:w-155 md:translate-x-0 lg:-bottom-20 lg:-right-60 lg:w-175"
             initial={reduce ? false : { opacity: 0, y: 90 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
